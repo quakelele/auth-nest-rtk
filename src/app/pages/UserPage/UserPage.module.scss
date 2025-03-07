@@ -1,0 +1,14 @@
+.wrapper {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        gap:15px;
+        flex-direction: column;
+    }
+}
