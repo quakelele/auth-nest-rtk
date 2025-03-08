@@ -1,13 +1,11 @@
-export type UsersType = {
-    name: string 
-    id: string 
-    refreshToken: string
+export type User = {
+    id: string
+    name: string
+    email: string
     acessToken: string
-    user : UsersType
-}
-
-
+    user: User | null
+ }
  export type UserState = {
-    user: UsersType | null
+    user: User | null
  }
  

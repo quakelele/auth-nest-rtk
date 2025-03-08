@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { UserState } from 'app/shared/config/__types'
+import {  UserState } from '../config/__types'
 
-const initialState: UserState = {
-   user: null
-//    user: JSON.parse(localStorage.getItem('user') || 'null'), // Загружаем пользователя из localStorage
+const initialState:UserState= {
+   user: JSON.parse(localStorage.getItem('user') || 'null'), 
 }
 
 const userSlice = createSlice({

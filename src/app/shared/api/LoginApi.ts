@@ -1,7 +1,7 @@
 import { API_URL } from "app/shared/config/api";
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { UsersType } from "app/shared/config/__types";
+import { User } from "app/shared/config/__types";
 
 export const LoginApi = createApi({
   reducerPath: "LoginApi",
@@ -9,7 +9,7 @@ export const LoginApi = createApi({
 
   baseQuery: fetchBaseQuery({ baseUrl: `${API_URL}` }),
   endpoints: (build) => ({
-    loginUser: build.mutation<UsersType, unknown>({
+    loginUser: build.mutation<User, unknown>({
       query(body) {
         return {
           url: "auth/login",
@@ -20,7 +20,7 @@ export const LoginApi = createApi({
       invalidatesTags: [{ type: "Users", id: "LIST" }],
     }),
 
-    updateFavorites: build.mutation<void, any>({
+    updateFavorites: build.mutation<void, unknown>({
       query(payload) {
         console.log("payload",payload)
         return {
