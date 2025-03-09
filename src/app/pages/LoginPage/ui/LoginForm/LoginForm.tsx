@@ -11,7 +11,7 @@ export const LoginForm = () => {
 
    const onFinish = (values: UserType) => {
       loginUser(values)
-      localStorage.setItem("email", values.email)
+      
       navigate(ROUTES.USER)
    }
 

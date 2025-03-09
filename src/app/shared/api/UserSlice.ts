@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {  UserWithoutAccessToken } from '../config/__types'
 
-const initialState:UserWithoutAccessToken= {
+const initialState= {
    user: JSON.parse(localStorage.getItem('user') || 'null'), 
 }
 const userSlice = createSlice({
@@ -10,10 +9,11 @@ const userSlice = createSlice({
    reducers: {
       setLogin: (state, action) => {
          state.user = action.payload
-         console.log(state.user)
+
       },
       setLogout: state => {
          state.user = null
+         localStorage.removeItem('user')
       },
    },
 })

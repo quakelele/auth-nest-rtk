@@ -1,4 +1,4 @@
-export type UserType = {
+export interface UserType  {
     id: string
     name: string
     email: string
@@ -7,9 +7,17 @@ export type UserType = {
     phone:string
 
  }
- export type RootState = {
-    user: UserType 
-    acessToken: string
+export  interface AuthState  {
+ user:UserType
+ acessToken: string 
+}
+ 
+
+ export interface RootState  {
+    user: AuthState
+    acessToken: string 
  }
  
- export type UserWithoutAccessToken = Omit<RootState, 'acessToken'>;
+
+
+//  export type UserWithoutAccessToken = Omit<RootState, 'acessToken'>;
