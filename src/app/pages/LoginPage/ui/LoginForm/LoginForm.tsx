@@ -1,21 +1,17 @@
 import { Button, Form, Input } from 'antd'
 import { Link, useNavigate } from 'react-router-dom'
 import { ROUTES } from 'app/shared/config'
-import { login } from 'app/shared/api/UserSlice'
-import { useDispatch } from 'react-redux'
 import { useLoginUserMutation } from 'app/shared/api/LoginApi'
-import { User } from 'app/shared/config/__types'
+import { UserType } from 'app/shared/config/__types'
 
 export const LoginForm = () => {
    const [loginUser] = useLoginUserMutation()
 
    const navigate = useNavigate()
-   const dispatch = useDispatch()
 
-   const onFinish = async (values:User) => {
-      const userData = await loginUser(values).unwrap()
-      dispatch(login(userData.user))
-      localStorage.setItem('acessToken', userData.acessToken)
+   const onFinish = (values: UserType) => {
+      loginUser(values)
+      localStorage.setItem("email", values.email)
       navigate(ROUTES.USER)
    }
 
@@ -27,16 +23,12 @@ export const LoginForm = () => {
          onFinish={onFinish}>
          <Form.Item
             name="email"
-            rules={[
-               { required: true, message: 'input your Username!' },
-            ]}>
+            rules={[{ required: true, message: 'input your Username!' }]}>
             <Input placeholder="Username" />
          </Form.Item>
          <Form.Item
             name="password"
-            rules={[
-               { required: true, message: 'input your Password!' },
-            ]}>
+            rules={[{ required: true, message: 'input your Password!' }]}>
             <Input type="password" placeholder="Password" />
          </Form.Item>
 

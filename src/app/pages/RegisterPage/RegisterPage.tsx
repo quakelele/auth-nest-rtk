@@ -2,6 +2,7 @@ import React from "react";
 import { useRegisterUserMutation } from "app/shared/api/RegisterApi";
 import { Button, Form, Input } from "antd";
 import $ from "./RegisterPage.module.scss";
+import { UserType } from "app/shared/config/__types";
 
 const formItemLayout = {
   labelCol: {
@@ -31,7 +32,7 @@ export const RegisterPage: React.FC = () => {
   const [form] = Form.useForm();
   const [registerUser] = useRegisterUserMutation();
 
-  const onFinish = (values: any) => {
+  const onFinish = (values:UserType) => {
     registerUser(values);
    
   };

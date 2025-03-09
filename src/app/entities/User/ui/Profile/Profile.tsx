@@ -1,7 +1,7 @@
 import { useUpdateFavoritesMutation } from 'app/shared/api/LoginApi'
 // import $ from "./Profile.module.scss";
 import { useLogout } from 'app/shared/hooks/useLogout'
-import { UserType} from 'app/shared/config/__types'
+import { UserType } from 'app/shared/config/__types'
 import { Button } from 'antd'
 import { Space, Typography, Flex } from 'antd'
 
@@ -17,8 +17,10 @@ export const Profile = ({ user }: Props) => {
    return (
       <Flex gap="middle" vertical>
          <Space direction="vertical">
-            <Text>{user.email}</Text>
+            <Text>mail: {user.email}</Text>
+            <Text>Name: {user.userName}</Text>
             <Text>ID: {user.id}</Text>
+            <Text>Phone: {user.phone}</Text>
          </Space>
          <Button
             onClick={() => sendProductId({ productId: null })}

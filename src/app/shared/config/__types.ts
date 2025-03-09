@@ -1,11 +1,15 @@
-export type User = {
+export type UserType = {
     id: string
     name: string
     email: string
+    userName:string
     acessToken: string
-    user: User | null
+    phone:string
+
  }
- export type UserState = {
-    user: User | null
+ export type RootState = {
+    user: UserType 
+    acessToken: string
  }
  
+ export type UserWithoutAccessToken = Omit<RootState, 'acessToken'>;

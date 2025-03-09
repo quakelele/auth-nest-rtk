@@ -1,5 +1,4 @@
 import { Button } from 'antd'
-import $ from './LogoutButton.module.scss'
 import { useLogout } from 'app/shared/hooks/useLogout';
 
 type Props = {
