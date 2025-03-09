@@ -13,11 +13,5 @@ export  interface AuthState  {
 }
  
 
- export interface RootState  {
-    user: AuthState
-    acessToken: string 
- }
- 
-
 
 //  export type UserWithoutAccessToken = Omit<RootState, 'acessToken'>;

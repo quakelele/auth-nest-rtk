@@ -2,7 +2,8 @@ import $ from './styles/LoginPage.module.scss'
 import {  useSelector } from 'react-redux'
 import { LogoutButton } from 'app/shared/ui/LogoutButton/LogoutButton'
 import { LoginForm } from './ui/LoginForm/LoginForm'
-import { RootState } from 'app/shared/config/__types'
+import { RootState } from 'app/providers/StoreProvider'
+
 
 
 export const LoginPage = () => {
