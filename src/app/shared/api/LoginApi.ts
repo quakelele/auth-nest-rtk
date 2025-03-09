@@ -1,7 +1,7 @@
 import { API_URL } from 'app/shared/config/api'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { UserType, AuthState} from 'app/shared/config/__types'
+import { UserType, AuthState } from 'app/shared/config/__types'
 import { setLogin } from './UserSlice'
 
 export const LoginApi = createApi({
@@ -21,8 +21,8 @@ export const LoginApi = createApi({
          transformResponse: (response: AuthState) => {
             localStorage.setItem('acessToken', response.acessToken)
             localStorage.setItem('user', JSON.stringify(response.user))
-            return response.user     
-               },
+            return response.user
+         },
          async onQueryStarted(_, { dispatch, queryFulfilled }) {
             const { data: user } = await queryFulfilled
             dispatch(setLogin(user))
