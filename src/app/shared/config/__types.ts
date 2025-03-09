@@ -1,17 +1,20 @@
-export interface UserType  {
-    id: string
-    name: string
-    email: string
-    userName:string
-    acessToken: string
-    phone:string
-
- }
-export  interface AuthState  {
- user:UserType
- acessToken: string 
+export interface AuthState {
+   user: UserType
+   acessToken: string
 }
- 
 
+export interface UserType {
+   userName: string
+   email: string
+   phone: string
+   id: string
+   name: string
+}
 
-//  export type UserWithoutAccessToken = Omit<RootState, 'acessToken'>;
+export interface RegisterRequest {
+   userName: string
+   email: string
+   phone: string
+   password: string
+}
+

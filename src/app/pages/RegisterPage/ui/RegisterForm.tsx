@@ -1,14 +1,14 @@
 import { useRegisterUserMutation } from 'app/shared/api/RegisterApi'
 import { Button, Form, Input } from 'antd'
 import $ from './RegisterForm.module.scss'
-import { UserType } from 'app/shared/config/__types'
+import { RegisterRequest } from 'app/shared/config/__types'
 import { formItemLayout, tailFormItemLayout } from '../utils/formItems'
 
 export const RegisterForm = () => {
    const [form] = Form.useForm()
    const [registerUser] = useRegisterUserMutation()
 
-   const onFinish = (values: UserType) => {
+   const onFinish = (values: RegisterRequest) => {
       registerUser(values)
    }
 

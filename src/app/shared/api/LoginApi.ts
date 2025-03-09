@@ -46,8 +46,3 @@ export const LoginApi = createApi({
 
 export const { useLoginUserMutation, useUpdateFavoritesMutation } = LoginApi
 
-// GET USERS
-// checkUserAuth: build.query<UsersType[], unknown>({
-//     query: () => "user",
-//     // providesTags: [{ type: "Users", id: "LIST" }],
-//   }),   // invalidatesTags: [{ type: "Cart", id: "LIST" }],
